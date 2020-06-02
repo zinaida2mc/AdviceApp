@@ -1,17 +1,19 @@
 import React, {useCallback, useEffect, useState} from 'react';
 import {SafeAreaView, StatusBar, View} from 'react-native';
 import {Button, Text} from 'react-native-elements';
-import axios from 'axios';
+
+import {fetchData} from '../utils/fetch-data';
 
 import {styles} from './styles';
-
-export const API = 'https://api.adviceslip.com/advice';
 
 const Home = () => {
   const [advice, setAdvice] = useState('');
 
   const getAdvice = useCallback(async () => {
-    axios.get(API).then((res) => setAdvice(res.data.slip.advice));
+    const data = await fetchData();
+
+    // this line is not covered
+    setAdvice(data.advice);
   }, []);
 
   useEffect(() => {
