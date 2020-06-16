@@ -11,8 +11,6 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 50,
   },
   advice: {
-    textShadowColor: '#d50000',
-    textShadowOffset: {width: 5, height: 5},
     textShadowRadius: 5,
     color: '#d50000',
     borderRadius: 20,
